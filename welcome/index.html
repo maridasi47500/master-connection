@@ -1,0 +1,31 @@
+<div class="left">
+<h1>Master-locate.com</h1>
+<p></p>
+</div>
+<div class="right">
+	<h3></h3>
+<ul class="accordion">
+</ul>
+	<button type="button" id="exportermethode">Exporter Méthode</button>
+	<div id="optiontelechargement"></div>
+	
+</div>
+<dialog open id="dialognumeromobile">
+
+
+	    <form action="/verifier" method="dialog">
+	  <div class="field">
+	  <p>numéro mobile devictime</p>
+		  <select id="indicatif" name="indicatif">
+			  <%=render_collection(collection=db.Country.getall(), partial='welcome/_country.html', as_='country')%>
+		  </select>
+
+		  <input type="number" id="num" name="num"/>
+	  </div>
+
+		  <div class="actions">
+		        <button class="verifierform" type="button">Vérifier</button>
+			   <button class="closeform" value="cancel" type="button">Fermer</button>
+		  </div>
+			  </form>
+</dialog>

@@ -1,0 +1,69 @@
+<h1 id="event">event facebook</h1>
+<form action="/event">
+	<div class="field">
+<label for="lienevent">entrez le lien d'un evenement</label>
+		<input id="lienevent" type="text" name="lien"/>
+	</div>
+	<div class="actions">
+		<input type="submit" name="ok"/>
+	</div>
+</form>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+	<%=#render_collection(collection=dbCado.getall(), partial='welcome/_cado.html', as_='cado')%>
+</div>
+<h1 id="newpost">nouveau post facebook</h1>
+<form action="/newpostfb">
+	<div class="field">
+<label for="textpost">text</label>
+		<input id="textpost" type="text" name="text"/>
+	</div>
+	<div class="actions">
+		<input type="submit" name="ok"/>
+	</div>
+</form>
+<h1 id="lienpostfb">post facebook</h1>
+<form action="/lienpost">
+	<div class="field">
+<label for="lienpost">entrez le lien du post</label>
+		<input id="lienpost" type="text" name="lienpost"/>
+	</div>
+	<div class="actions">
+		<input type="submit" name="ok"/>
+	</div>
+</form>
+<h1 id="artist"></h1>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+	<%=#render_collection(collection=dbArtist.getwithoutpic(), partial='welcome/_artist.html', as_='artist')%>
+</div>
+<h1 id="jeu">ajouter une facture de telephone</h1>
+<form action="/facturetelephone">
+	<div class="field">
+<label for="facture">entrez la facture</label>
+		<input id="facture" type="text" name="file"/>
+	</div>
+	<div class="actions">
+		<input type="submit" value="ok" name="ok"/>
+	</div>
+</form>
+<h1 id="watsap">ajouter mes données whatsap</h1>
+<form action="/donneeswhatsap">
+	
+		<input id="watsappphone" type="hidden" value="<%=db.Numero.findbybumero(session["numero"])["id"]%>" name="numero_id"/>
+	<div class="field">
+<label for="watsapdone">entrez les données</label>
+		<input id="watsapdone" type="text" name="file"/>
+	</div>
+	<div class="actions">
+		<input type="submit" value="ok" name="ok"/>
+	</div>
+</form>
+<h1 id="fb">ajouter mes données facebook</h1>
+<form action="/donneesfb">
+	<div class="field">
+<label for="fbdonnees">entrez les données</label>
+		<input id="fbdonnees" type="text" name="file"/>
+	</div>
+	<div class="actions">
+		<input type="submit" value="ok" name="ok"/>
+	</div>
+</form>
